@@ -20,7 +20,7 @@
         left: 0;
         animation: startBg 5s 1s both;
         z-index: -1;
-        transform: translate(var(--parX), var(--parY)) scale(1.05);
+        transform: translate(var(--parX, 0px), var(--parY, 0px)) scale(1.05);
     }
 
     .Intro {
@@ -38,7 +38,7 @@
 
         img {
             width: 100%;
-            transform: translate(var(--parCharX), var(--parCharY));
+            transform: translate(var(--parCharX, 0px), var(--parCharY, 0px));
         }
     }
 
@@ -48,7 +48,7 @@
 
 
         .myself {
-            transform: translate(var(--parIntroX), var(--parIntroY));
+            transform: translate(var(--parIntroX, 0px), var(--parIntroY, 0px));
             display: flex;
             flex-direction: column;
             opacity: 0.8;
