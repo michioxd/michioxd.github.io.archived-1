@@ -1,0 +1,134 @@
+.Main {
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    animation: fadeIn 2s both;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        background-image: url(../assets/bg.webp);
+        background-position: top center;
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        animation: startBg 5s 1s both;
+        z-index: -1;
+        transform: translate(var(--parX), var(--parY)) scale(1.05);
+    }
+
+    .Intro {
+        width: 50%;
+    }
+
+    .SrChar {
+        width: 50%;
+        height: 100%;
+        animation: openChar 2s 4s both;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+
+        img {
+            width: 100%;
+            transform: translate(var(--parCharX), var(--parCharY));
+        }
+    }
+
+    .Intro {
+        padding: 2rem;
+        animation: openText 2s 3.5s both;
+
+
+        .myself {
+            transform: translate(var(--parIntroX), var(--parIntroY));
+            display: flex;
+            flex-direction: column;
+            opacity: 0.8;
+
+            .social {
+                margin-top: 2rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .socialItem {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 30px;
+                    padding: .5rem;
+                    margin-right: .5rem;
+                    border-radius: 5px;
+                    transition: .2s;
+
+                    &:hover {
+                        background: rgba(81, 81, 81, 0.7);
+                        backdrop-filter: blur(10px);
+                        -webkit-backdrop-filter: blur(10px);
+                    }
+                }
+            }
+        }
+
+
+        * {
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, .4);
+        }
+    }
+
+}
+
+@keyframes openChar {
+    from {
+        transform: translate(110px, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes openText {
+    from {
+        transform: translate(-110px, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes startBg {
+    from {
+        background-position: top center;
+        filter: blur(0);
+        -webkit-filter: blur(0px);
+    }
+
+    to {
+        background-position: bottom center;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+    }
+}
